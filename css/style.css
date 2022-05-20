@@ -1,0 +1,582 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body{
+    font-family: 'Marko One', serif;
+    background-color: var(--secondary-color);
+    color: #fff
+}
+
+:root{
+    --main-color: #f73445;
+    --secondary-color: #37383e;
+    --third-color: #12162b;
+    --fourth-color: #121212;
+    --section-padding: 60px;
+    --main-duration: .3s
+}
+
+html{
+    scroll-behavior: smooth
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+a{
+    text-decoration: none;
+    width: fit-content;
+}
+
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+@media(min-width: 768px){
+    .container{
+        width: 750px
+    }
+}
+
+@media(min-width: 992px){
+    .container{
+        width: 970px
+    }
+}
+
+@media(min-width: 1200px){
+    .container{
+        width: 1170px
+    }
+}
+
+/*Components*/
+
+.main-heading{
+    margin: 50px auto;
+    text-align: center;
+    width: fit-content;
+    font-size: 25px;
+    letter-spacing: 5px;
+    word-spacing: 2px;
+    position: relative;
+    padding: 10px 20px;
+    font-family: monospace
+}
+
+.main-heading span{
+    color: var(--main-color)
+}
+
+.main-heading::before{
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 30%;
+    height: 1px;
+    background-color: var(--main-color)
+}
+
+.main-heading::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 30%;
+    height: 1px;
+    background-color: #fff
+}
+
+@media(max-width: 767px){
+    .main-heading{
+        font-size: 20px
+    }
+}
+
+/****************************************************************************************************************/
+
+/*Headrer Section*/
+header{
+    position: relative;
+    min-height: 70px;
+    padding: 10px 0;
+    background-color: #1D2247
+}
+
+header .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative
+}
+
+@media(max-width: 767px){
+    header .container{
+        flex-direction: column;
+    }
+}
+
+header .brand{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between
+}
+
+header .brand:hover{
+    cursor: pointer
+}
+
+header .brand .logo{
+    
+    height: 50px
+}
+
+header .brand p{
+    font-weight: reguler;
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-family: tahoma;
+    transition: 3s
+}
+
+header .brand:hover p{
+    color: var(--main-color)
+}
+
+header .brand p span{
+    color: var(--main-color);
+    transition: 3s
+}
+
+header .brand:hover p span{
+    color: #fff
+}
+
+header .main-nav{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+header .main-nav li a{
+    padding: 5px 30px;
+    margin-left: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    transition: .3s
+}
+
+@media(max-width: 767px){
+    header .main-nav li a{
+        padding: 5px 15px;
+        font-size: 10px;
+        margin: 0 5px;
+    }
+}
+
+
+header .main-nav li .active,
+header .main-nav li a:hover{
+    color: var(--main-color)
+}
+
+/****************************************************************************************************************/
+
+/*Landing Section*/
+
+.landing{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    max-height: calc(100vh - 96.75px);
+    background-image: linear-gradient(180deg, #121212,#12162b, transparent)
+}
+
+
+
+.landing .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.landing .image{
+    flex-basis: 40%;
+    position: relative
+}
+
+.landing .image::before{
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: -5px;
+    width: 30%;
+    height: 1px;
+    background-color: var(--main-color)
+}
+
+@media(max-width: 767px){
+    .landing .image{
+    flex-basis: 60%;
+    }
+}
+
+.landing .image::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: -20px;
+    width: 40%;
+    height: 3px;
+    background-color: #fff
+}
+
+.landing .image img{
+    width: 100%;
+}
+
+.landing .text{
+    flex-basis: 60%;
+    padding: 50px 0;
+    position: relative
+}
+
+.landing .text::before{
+    content: "";
+    position: absolute;
+    top: 40px;
+    right: -5px;
+    width: 30%;
+    height: 1px;
+    background-color: #fff
+}
+
+.landing .text::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: -20px;
+    width: 40%;
+    height: 3px;
+    background-color: var(--main-color)
+}
+
+.landing .text h2{
+    margin-bottom: 20px;
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+.landing .text h2 span{
+    color: var(--main-color);
+    font-size: 30px
+}
+
+.landing .text p{
+    font-size: 15px;
+    font-family: sans-serif;
+    line-height: 1.4;
+    letter-spacing: 2px;
+}
+
+.landing .text a{
+    position: absolute;
+    color: #fff;
+    background-color: var(--main-color);
+    width: fit-content;
+    border-radius: 30px;
+    padding: 10px 20px;
+    bottom: -25px;
+    left: 0px;
+}
+
+@media(max-width: 767px){
+    .landing .text h2{
+        font-size: 20px;
+    }
+    
+    .landing .text h2 span{
+        font-size: 15px;
+    }
+    
+    .landing .text p{
+        font-size: 12px;
+    }
+}
+
+/****************************************************************************************************************/
+
+/*Abut-me Section*/
+
+.about-me{
+    position: relative;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--third-color)
+}
+
+.about-me .box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px
+}
+
+.about-me .box img{
+    height: 150px;
+    margin-right: 50px;
+    padding: 20px;
+    border-radius: 50%;
+    background-image: linear-gradient(45deg, #1e39cd, transparent);
+}
+
+.about-me .box .text h3{
+    margin: 20px 0 30px;
+    color: var(--main-color);
+}
+
+.about-me .box .text p{
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+@media(max-width: 767px){
+    .about-me .box{
+        flex-direction: column
+    }
+    
+    .about-me .box img{
+        margin: 0 auto
+    }
+    
+    .about-me .box .text{
+        text-align: center
+    }
+}
+
+.about-me .my-video{
+    display: block;
+    margin: 0 auto
+}
+
+.about-me .my-video video{
+    width: 100%
+}
+/****************************************************************************************************************/
+
+/*My-Hobbies Section*/
+
+.my-hobbies{
+    position: relative;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-image: linear-gradient(90deg, #121212,#12162b, transparent)
+}
+
+.my-hobbies .container > p{
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 25px;
+    margin: 40px auto;
+    text-align: center;
+    width: fit-content;
+    border-bottom: 1px solid var(--main-color)
+}
+
+.my-hobbies .my-info{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-column-gap: 20px
+}
+
+.my-hobbies .my-info > div{
+    background-color: var(--secondary-color);
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+    background-image: linear-gradient(45deg, #1d2247, transparent);
+    position: relative
+}
+
+.my-hobbies .my-info > div::before{
+    content: "";
+    position: absolute;
+    width: 20%;
+    height: 1px;
+    background-color: var(--main-color);
+    left: 0;
+    top: 0
+}
+
+.my-hobbies .my-info > div::after{
+    content: "";
+    position: absolute;
+    width: 20%;
+    height: 1px;
+    background-color: var(--main-color);
+    bottom: 0;
+    right: 0
+}
+
+.my-hobbies .my-info > div > i{
+    margin: 20px 0;
+    color: var(--main-color);
+    font-size: 35px
+}
+
+.my-hobbies .my-info > div > h3{
+    margin: 20px 0;
+    letter-spacing: 5px;
+}
+
+.my-hobbies .my-info > div > p{
+    margin: 20px 0 0;
+    font-family: monospace
+}
+
+/*My-Desings - My-Photos*/
+
+.my-hobbies .my-desings,
+.my-hobbies .my-photos{
+    margin-top: 50px;
+    padding: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-column-gap: 20px;
+    grid-row-gap: 20px
+}
+
+@media(max-width: 767px){
+    .my-hobbies .my-desings,
+    .my-hobbies .my-photos{
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))
+    }
+}
+
+.my-hobbies .my-desings .box,
+.my-hobbies .my-photos .box{
+    background-color: #070a17;
+    border-radius: 5px;
+    overflow: hidden
+}
+
+.my-hobbies .my-desings .box img,
+.my-hobbies .my-photos .box img{
+    max-width: 100%;
+    max-height: 80%;
+    transition: .3s
+}
+
+.my-hobbies .my-desings .box:hover img{
+    max-height: 100%
+}
+
+.my-hobbies .my-photos .box:hover img{
+        max-height: 100%
+}
+
+/****************************************************************************************************************/
+
+/*Contact*/
+
+.contact{
+    display: flex;
+    justify-content: space-between;
+    background-color: #141111;
+    align-items: center;
+    position: relative;
+}
+
+.contact .text{
+    flex: 1;
+    text-align: center;
+    font-family: monospace;
+}
+
+.contact .text h2{
+    margin: 20px auto 5px;
+    font-weight: bold;
+    width: fit-content;
+    font-size: 20px;
+}
+
+.contact .text h2 span{
+    color: var(--main-color);
+    font-size: 16px
+}
+
+.contact .text p{
+    margin: 0 0 10px;
+    font-size: 15px;
+}
+
+.contact .text ul{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
+.contact .text ul li i{
+    color: var(--main-color);
+    margin: 0 10px;
+    font-size: 15px;
+    padding: 10px;
+    transition: .3s
+}
+
+.contact .text ul li i:hover{
+    color: #fff
+}
+
+@media(max-width: 767px){
+    .contact{
+      flex-direction: column
+    }
+    
+    .contact .text ul li i{
+        font-size: 10px
+    }
+}
+
+/****************************************************************************************************************/
+
+/*Modather Salah*/
+
+.modather-salah{
+    text-align: center;
+    padding: 10px;
+    font-family: monospace
+}
+
+.modather-salah span{
+    color: bisque
+}
+
+.modather-salah span i{
+    color: red
+}
+
+.modather-salah span a{
+    color: bisque;
+    text-decoration: underline
+}
